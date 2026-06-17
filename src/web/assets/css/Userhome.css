@@ -1,0 +1,65 @@
+:root {
+  --green:  #0a7a52; --green-d: #065438; --ink: #0f1c11;
+  --muted:  #60706a; --white: #fff; --off: #f3f6f2;
+  --border: rgba(0,0,0,.09); --r: 12px; --tr: .28s ease;
+  --serif:  "Playfair Display", Georgia, serif;
+  --sans:   "Inter", system-ui, sans-serif;
+  --shadow-lg: 0 16px 48px rgba(0,0,0,.13);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); color: var(--ink); background: var(--off); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+
+.page-hero {
+  background: linear-gradient(140deg, #051c0f 0%, #0d5e3c 100%);
+  padding: 24px 24px; text-align: center; color: #fff;
+}
+.ph-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .7rem; font-weight: 700; letter-spacing: .18em;
+  text-transform: uppercase; color: #c99a0d; margin-bottom: 8px;
+}
+.ph-label::before { content: ""; width: 22px; height: 2px; background: currentColor; flex-shrink: 0; }
+.page-hero h1 { font-family: var(--serif); font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 900; margin: 0; }
+.page-hero p { max-width: 480px; margin: 8px auto 0; color: rgba(255,255,255,.74); font-size: 1rem; line-height: 1.7; }
+
+.dash-wrap { max-width: 800px; margin: 0 auto; padding: 56px 24px 80px; }
+
+.dash-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 32px; }
+
+.dash-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 32px 28px; display: flex; flex-direction: column; gap: 10px;
+  transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr);
+}
+.dash-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--green); }
+
+.dash-icon {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(10,122,82,.1); color: var(--green);
+  display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+}
+.dash-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  line-height: 1;
+}
+.dash-card:nth-child(1) .dash-icon::before { content: "\f4ad"; }
+.dash-card:nth-child(2) .dash-icon::before { content: "\f067"; }
+.dash-card:nth-child(3) .dash-icon::before { content: "\f02d"; }
+.dash-card:nth-child(4) .dash-icon::before { content: "\f57d"; }
+.dash-card h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 900; color: var(--ink); margin: 0; }
+.dash-card p  { color: var(--muted); font-size: .9rem; line-height: 1.6; margin: 0; }
+
+.btn-logout {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 46px; padding: 0 24px; border-radius: 8px;
+  border: 1.5px solid var(--border); background: transparent;
+  font-family: var(--sans); font-size: .88rem; font-weight: 600;
+  color: var(--muted); cursor: pointer; transition: border-color var(--tr), color var(--tr);
+}
+.btn-logout:hover { border-color: #b91c1c; color: #b91c1c; }
+
+@media (max-width: 600px) {
+  .dash-grid { grid-template-columns: 1fr; }
+}

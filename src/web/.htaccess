@@ -1,0 +1,178 @@
+Options -Indexes
+RewriteEngine On
+
+
+RewriteRule ^auth/auth/(.*)$ /auth/$1 [R=302,L]
+
+
+<FilesMatch "\.(sql|env|log|ini|sh|bak)$">
+    Require all denied
+</FilesMatch>
+
+
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/index\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)index\.html
+RewriteRule ^ %1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/search\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)search\.html
+RewriteRule ^ %1search [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/map\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)map\.html
+RewriteRule ^ %1map [R=301,L]
+
+RewriteRule ^login(?:\.php)?/?$ /auth/login [R=302,L]
+
+RewriteRule ^register(?:_form)?(?:\.php)?/?$ /auth/register [R=302,L]
+
+RewriteRule ^feedback(?:_wall)?\.php/?$ /community/feedback [R=302,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/(?:traditional|Traditional)\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)(?:traditional|Traditional)\.(?:php|html) [NC]
+RewriteRule ^ %1categories/traditional [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/danceCategories\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)danceCategories\.(?:php|html) [NC]
+RewriteRule ^ %1categories/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/categories/danceCategories\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)categories/danceCategories\.(?:php|html) [NC]
+RewriteRule ^ %1categories/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/categories/traditional\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)categories/traditional\.(?:php|html) [NC]
+RewriteRule ^ %1categories/traditional [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/categories/Traditional\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)categories/Traditional\.(?:php|html) [NC]
+RewriteRule ^ %1categories/traditional [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/categories/festival\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)categories/festival\.(?:php|html) [NC]
+RewriteRule ^ %1categories/festival [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/categories/partner\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)categories/partner\.(?:php|html) [NC]
+RewriteRule ^ %1categories/partner [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/categories/pop\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)categories/pop\.(?:php|html) [NC]
+RewriteRule ^ %1categories/pop [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/regions/regions\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)regions/regions\.(?:php|html) [NC]
+RewriteRule ^ %1regions/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/regions/rioDeJanerio\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)regions/rioDeJanerio\.(?:php|html) [NC]
+RewriteRule ^ %1regions/rio-de-janeiro [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/regions/northeasternBrazil\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)regions/northeasternBrazil\.(?:php|html) [NC]
+RewriteRule ^ %1regions/northeastern-brazil [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/regions/pernambuco\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)regions/pernambuco\.(?:php|html) [NC]
+RewriteRule ^ %1regions/pernambuco [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/regions/bahia\.(?:php|html)[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)regions/bahia\.(?:php|html) [NC]
+RewriteRule ^ %1regions/bahia [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/auth/login\.php[\s?] [NC]
+RewriteRule ^auth/login\.php$ /auth/login [R=302,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/auth/register_form\.php[\s?] [NC]
+RewriteRule ^auth/register_form\.php$ /auth/register [R=302,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/auth/logout\.php[\s?] [NC]
+RewriteRule ^auth/logout\.php$ /auth/logout [R=302,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/pages/about\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/about\.php
+RewriteRule ^ %1pages/about [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/pages/timeline\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/timeline\.php
+RewriteRule ^ %1pages/timeline [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/pages/instruments\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/instruments\.php
+RewriteRule ^ %1pages/instruments [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/user/userhome\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)user/userhome\.php
+RewriteRule ^ %1user/home [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/user/createDance\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)user/createDance\.php
+RewriteRule ^ %1user/contribute [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/user/feedback\.php[\s?] [NC]
+RewriteRule ^user/feedback\.php$ /dancopedia/src/web/community/feedback [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/community/feedback\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)community/feedback\.php
+RewriteRule ^ %1community/feedback [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/community/feedback_wall\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)community/feedback_wall\.php
+RewriteRule ^ %1community/feedback-wall [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/admin/adminhome\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)admin/adminhome\.php
+RewriteRule ^ %1admin/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/[^?]*/admin/userFeedback\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)admin/userFeedback\.php
+RewriteRule ^ %1admin/feedback [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+
+RewriteRule ^dances/([^/.]+)/?$ dances/dancePage.php?slug=$1 [L,QSA]
+
+
+RewriteRule ^search/?$ search.html [L]
+RewriteRule ^map/?$    map.html    [L]
+
+
+RewriteRule ^categories/?$             categories/danceCategories.php [L]
+RewriteRule ^categories/traditional/?$ categories/Traditional.php     [L]
+RewriteRule ^categories/festival/?$    categories/festival.php        [L]
+RewriteRule ^categories/partner/?$     categories/partner.php         [L]
+RewriteRule ^categories/pop/?$         categories/pop.php             [L]
+
+
+RewriteRule ^regions/?$                     regions/regions.php            [L]
+RewriteRule ^regions/rio-de-janeiro/?$      regions/rioDeJanerio.php       [L]
+RewriteRule ^regions/northeastern-brazil/?$ regions/northeasternBrazil.php [L]
+RewriteRule ^regions/pernambuco/?$          regions/pernambuco.php         [L]
+RewriteRule ^regions/bahia/?$               regions/bahia.php              [L]
+
+RewriteRule ^auth/login/?$    auth/login.php         [L]
+RewriteRule ^auth/register/?$ auth/register_form.php [L]
+RewriteRule ^auth/logout/?$   auth/logout.php        [L]
+
+RewriteRule ^pages/about/?$       pages/about.php       [L]
+RewriteRule ^pages/timeline/?$    pages/timeline.php    [L]
+RewriteRule ^pages/instruments/?$ pages/instruments.php [L]
+
+RewriteRule ^user/home/?$       user/userhome.php    [L]
+RewriteRule ^user/contribute/?$ user/createDance.php [L]
+RewriteRule ^user/feedback/?$   community/feedback.php [R=301,L]
+
+RewriteRule ^community/feedback/?$      community/feedback.php      [L]
+RewriteRule ^community/feedback-wall/?$ community/feedback_wall.php [L]
+
+RewriteRule ^admin/?$          admin/adminhome.php    [L]
+RewriteRule ^admin/feedback/?$ admin/userFeedback.php [L]

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06120a">
+  <title>Dancopedia Brazil</title>
+  <link rel="preload" href="assets/css/Home.css" as="style">
+  <link rel="preload" href="assets/images/brazil_background.jpg" as="image">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/Home.css">
+  <link rel="stylesheet" href="assets/css/toolbar.css">
+  <script src="assets/js/toolbar.js" defer></script>
+  <link rel="stylesheet" href="assets/css/Chatbox.css">
+  <link rel="preload" href="assets/js/chatbox.js" as="script">
+  <link rel="preload" href="assets/images/chatbox_face.jpg" as="image">
+</head>
+<body>
+<div id="toolbar-container"></div>
+<div id="chatbox-container"></div>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('assets/images/brazil_background.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <p class="label">Brazilian Dance Archive</p>
+      <h1>Dancopedia<span>Brazil</span></h1>
+      <p class="hero-desc">Explore the rhythms, regions, and cultural stories behind Brazil's most expressive dance traditions.</p>
+      <div class="hero-links">
+        <a href="categories" class="hero-pill hero-pill--solid">Categories</a>
+        <a href="regions" class="hero-pill hero-pill--solid">Regions</a>
+        <a href="map" class="hero-pill hero-pill--solid">Map</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="section" id="styles">
+    <div class="wrap">
+      <div class="sec-intro">
+        <p class="label">Start Exploring</p>
+        <h2>Featured Dance Styles</h2>
+        <p class="sec-desc">From carnival stages to intimate partner dances — each style carries the pulse of a distinct Brazilian tradition.</p>
+      </div>
+      <div class="styles-grid">
+        <a class="style-card" href="categories/traditional">
+          <img src="assets/images/samba_img.jpg" alt="Samba dancers" class="samba-card-img">
+          <div class="style-card-body">
+            <span class="style-tag">Traditional</span>
+            <h3>Samba</h3>
+            <p>Brazil's globally recognized rhythm of carnival, percussion, and community.</p>
+            <span class="style-cta">Explore</span>
+          </div>
+        </a>
+        <a class="style-card" href="categories/partner">
+          <img src="assets/images/forro_img.jpg" alt="Forro partner dancers">
+          <div class="style-card-body">
+            <span class="style-tag">Partner</span>
+            <h3>Forro</h3>
+            <p>Close partner movement shaped by northeastern rhythms and dance halls.</p>
+            <span class="style-cta">Explore</span>
+          </div>
+        </a>
+        <a class="style-card" href="categories/festival">
+          <img src="assets/images/frevo_img.jpg" alt="Frevo dancer">
+          <div class="style-card-body">
+            <span class="style-tag">Festival</span>
+            <h3>Frevo</h3>
+            <p>Fast footwork, acrobatics, and bright umbrellas from Pernambuco's carnival.</p>
+            <span class="style-cta">Explore</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="region-section" aria-labelledby="region-title">
+    <div class="wrap region-layout">
+      <div class="region-text">
+        <p class="label label--light">Dance by Place</p>
+        <h2 id="region-title">Every rhythm has a home.</h2>
+        <p>Brazilian dance shifts from coast to inland cities, from carnival streets to intimate ballrooms. Explore dances by region or open the interactive map to trace each style to its cultural origin.</p>
+        <div class="region-ctas">
+          <a href="regions" class="btn-solid">Browse Regions</a>
+          <a href="map" class="btn-solid">Open Map</a>
+        </div>
+      </div>
+      <div class="region-map-wrap">
+        <img src="assets/images/brazil-map.jpg" alt="Map of Brazil">
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-section" aria-labelledby="guide-title">
+    <div class="wrap">
+      <div class="sec-intro">
+        <p class="label">Learn the Culture</p>
+        <h2 id="guide-title">A better way to discover Brazilian dance.</h2>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <span class="guide-num">01</span>
+          <div class="guide-icon"></div>
+          <h3>Understand Rhythm</h3>
+          <p>See how movement, music, instruments, and tempo shape each tradition.</p>
+        </div>
+        <div class="guide-card">
+          <span class="guide-num">02</span>
+          <div class="guide-icon"></div>
+          <h3>Compare Styles</h3>
+          <p>Browse traditional, partner, festival, and pop dances side by side.</p>
+        </div>
+        <div class="guide-card">
+          <span class="guide-num">03</span>
+          <div class="guide-icon"></div>
+          <h3>Search the Archive</h3>
+          <p>Find dances by name, origin, category, or region as the collection grows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section archive-section" aria-labelledby="archive-title">
+    <div class="wrap">
+      <div class="sec-intro sec-intro--center">
+        <p class="label">Dance Archive</p>
+        <h2 id="archive-title">Explore the Collection</h2>
+        <p class="sec-desc">Jump into individual dance pages and discover new styles from across Brazil.</p>
+      </div>
+    </div>
+    <div id="danceContainer" class="scrolling"></div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="assets/js/load_dances.js?v=2"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

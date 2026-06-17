@@ -1,0 +1,37 @@
+<button class="cb-fab" id="cbToggle" aria-label="Open chat">
+  <img alt="Dancopedia AI" width="58" height="58" decoding="async">
+  <span class="cb-fab-dot"></span>
+</button>
+
+<div class="cb-panel" id="cbPanel" aria-hidden="true" style="display:none">
+
+  <div class="cb-header">
+    <div class="cb-header-info">
+      <div class="cb-avatar-wrap">
+        <img alt="AI" class="cb-avatar" width="38" height="38" decoding="async">
+        <span class="cb-online-dot"></span>
+      </div>
+      <div class="cb-header-text">
+        <div class="cb-name">Dancopedia AI</div>
+        <div class="cb-status">Brazilian dance expert</div>
+      </div>
+    </div>
+    <button class="cb-close" id="cbClose" aria-label="Close chat">&times;</button>
+  </div>
+
+  <div class="cb-messages" id="cbMessages">
+    <div class="cb-msg cb-msg--ai">
+      <img alt="AI" class="cb-msg-avatar" width="28" height="28" decoding="async">
+      <div class="cb-bubble">Hi! Ask me anything about Brazilian dances — regions, styles, history, and more.</div>
+    </div>
+  </div>
+
+  <div class="cb-footer">
+    <div class="cb-input-row">
+      <input type="text" class="cb-input" id="cbInput" placeholder="Ask about Brazilian dances…" autocomplete="off" maxlength="200">
+      <button class="cb-send" id="cbSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div class="cb-char-count" id="cbCharCount">200</div>
+  </div>
+
+</div>
